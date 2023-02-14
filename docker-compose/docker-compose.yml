@@ -1,6 +1,12 @@
 version: "3.5"
 
 services:
+  composer:
+    image: composer:latest
+    working_dir: /usr/src/app
+    volumes:
+      - ../app:/usr/src/app
+    command: "install"
 
   app:
     build: 
