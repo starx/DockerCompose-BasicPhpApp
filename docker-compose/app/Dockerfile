@@ -19,19 +19,10 @@ RUN yes | pecl install xdebug-$XDEBUG_VERSION \
 RUN mkdir -p /var/log/xdebug && \
 chown -hR www-data:www-data /var/log/xdebug && \
 printf '[xdebug]\n\
-xdebug.mode=develop,coverage,debug,gcstats,profile,trace\n\
+xdebug.mode=develop\n\
 xdebug.start_with_request=default\n\
 xdebug.discover_client_host=1\n\
 xdebug.remote_handler=dbgp\n\
 xdebug.client_port='$XDEBUG_CLIENT_PORT'\n\
-xdebug.client_host=localhost\n\
-xdebug.output_dir='\'/var/log/xdebug\''\n\
-xdebug.log='\'/var/log/xdebug/xdebug.log\''\n\
-xdebug.cli_color=1\n\
-xdebug.show_local_vars=1\n\
-xdebug.trigger_value='\'\''\n\
-xdebug.profiler_output_name=cachegrind.out.%%p.%%s.%%H_%%R\n\
-xdebug.gc_stats_output_name=gcstats.%%p.%%s.%%H_%%R\n\
-xdebug.trace_output_name=trace.%%c.%%s.%%H_%%R\n\
-xdebug.trace_format=0\n'\
+xdebug.client_host=localhost\n'\
 >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
