@@ -1,0 +1,17 @@
+version: "3.5"
+
+services:
+
+  app:
+    build: 
+      context: app
+      args:
+        PHP_VERSION: 7
+        XDEBUG_CLIENT_PORT: 9003
+    working_dir: /var/www
+    ports:
+      - 8080:80
+    volumes:
+      - ../app:/var/www
+    environment:
+      - APACHE_DOCUMENT_ROOT=/var/www/public
