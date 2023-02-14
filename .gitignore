@@ -1,0 +1,4 @@
+app/vendor
+app/var/log/*
+!app/var/log/.gitkeep
+app/.phpunit.result.cache
