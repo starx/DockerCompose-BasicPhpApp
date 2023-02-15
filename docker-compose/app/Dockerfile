@@ -19,7 +19,7 @@ RUN yes | pecl install xdebug-$XDEBUG_VERSION \
 RUN mkdir -p /var/log/xdebug && \
 chown -hR www-data:www-data /var/log/xdebug && \
 printf '[xdebug]\n\
-xdebug.mode=develop\n\
+xdebug.mode=develop,debug\n\
 xdebug.start_with_request=default\n\
 xdebug.discover_client_host=1\n\
 xdebug.remote_handler=dbgp\n\
